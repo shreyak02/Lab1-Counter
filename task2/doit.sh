@@ -1,8 +1,5 @@
 #!/bin/sh
 
-## run: ./doit.sh 
-
-
 #cleanup
 rm -rf obj_dir
 rm -f counter.vcd
