@@ -12,9 +12,15 @@
 ## Task 1 - Simulating a basic 8-bit binary counter
 
 ### Set Up:
-**Fork the github repository to my github account and clone a copy to my local disk. 
-** Create a System Verilog file (counter.sv):
+* Fork the github repository to my github account and clone a copy to my local disk. 
+* Create a System Verilog file (counter.sv):
 ![image](https://user-images.githubusercontent.com/21007664/198896747-a05a8b70-30da-419c-8c2e-47570b3233bd.png)
-** File name and the module name must be the same.
-** Number of bits in the counter is specified with the parameter WIDTH. (Currently set to 8 bit)
-** The always_ff @(posedge clk) is the way 
+* File name and the module name must be the same.
+* Number of bits in the counter is specified with the parameter WIDTH. (Currently set to 8 bit)
+* The always_ff @(posedge clk) is the way to specify a clocked circuit.
+** <= are non-block assignments that are always used within an always_ff block.
+** { , } is a concatenation operator to form 8 bits of 0.
+** WIDTH-1 creates 7 bits of '0' and if enable=1 then LSB becomes 1 (concatenates count with enable).
+
+![image](https://user-images.githubusercontent.com/21007664/198899941-07b366df-e9ca-42ca-bcfd-e98923c0992c.png)
+
