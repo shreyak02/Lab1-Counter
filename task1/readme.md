@@ -8,3 +8,13 @@
 * **Verilator Testbench:** A disadvantage of translating a Verilog design in C++ executable is we cannot interact with the simulator. To know if the DUT is working, have to write a "wrapper" program that instantiates the DUT, provide input signals and display output signals. The wrapper program is known as a testbench for the DUT.
 
 * **Vbuddy:** A bridge between the verilator simulator and actual physical electronics (microphone, 7 segment display). Using verilator normally is like software development...no way of interacting with the DUT. 
+
+## Task 1 - Simulating a basic 8-bit binary counter
+
+### Set Up:
+**Fork the github repository to my github account and clone a copy to my local disk. 
+** Create a System Verilog file (counter.sv):
+![image](https://user-images.githubusercontent.com/21007664/198896747-a05a8b70-30da-419c-8c2e-47570b3233bd.png)
+** File name and the module name must be the same.
+** Number of bits in the counter is specified with the parameter WIDTH. (Currently set to 8 bit)
+** The always_ff @(posedge clk) is the way 
