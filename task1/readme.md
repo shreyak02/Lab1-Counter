@@ -24,3 +24,14 @@
 
 ![image](https://user-images.githubusercontent.com/21007664/198899941-07b366df-e9ca-42ca-bcfd-e98923c0992c.png)
 
+## Step 4: Create testbench counter_tb.cpp in C++
+
+![image](https://user-images.githubusercontent.com/21007664/198900326-1f080f59-5fde-4cea-b6e4-edae6b755b4b.png)
+
+## Step 5: Compile the System Verilog model with the testbench
+ 
+ ** Create a shell script to run the Verilator to translate counter.sv into C++ code, and merge with counter_tb.cpp to produce executable files. Vcounter.mk is the file that will be generated to produce the final simulation Vcounter. Vcounter.vcd is a file that can be run on GTKwave to produce a trace waveform file and contain the simulation results.
+ 
+ ## Step 6: Plot the counter waveforms with GTKwave:
+ 
+ 
