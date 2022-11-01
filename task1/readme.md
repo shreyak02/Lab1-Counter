@@ -34,4 +34,6 @@
  
  ## Step 6: Plot the counter waveforms with GTKwave:
  
- 
+ ![image](https://user-images.githubusercontent.com/21007664/199223250-c168da38-922b-4063-b0a4-f4a5bd439a00.png)
+
+axis is in ps to represent the period for the clock cycle, it doesn't matter what scale is used.
