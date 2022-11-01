@@ -47,3 +47,20 @@ Modify the testbench so that you stop counting for 3 cycles once the counter rea
 
 Q) WHY DOES THE IF HAVE TO BE STORE + 1 AND +2 RATHER THAN (STORE AND THEN STORE +1)? BCOS IF WE DO THIS WE GET AN INFINITE LOOP.
 
+## Challenge 2:
+
+The current counter has a synchronous reset. To implement asynchronous reset, you can change line 11 of counter.sv to detect change in rst signal. 
+Before:
+
+![image](https://user-images.githubusercontent.com/21007664/199233358-196310f9-e846-4413-a3ae-530f118d2d0a.png)
+
+![image](https://user-images.githubusercontent.com/21007664/199233306-bce1f7e5-66c2-42a4-86e7-59bd7ada16ee.png)
+
+
+After:
+
+![image](https://user-images.githubusercontent.com/21007664/199233135-44b2946d-2381-4da1-9b32-75823a6f7eee.png)
+
+![image](https://user-images.githubusercontent.com/21007664/199233022-11376e12-1575-41d4-9bcb-465a0f5ad742.png)
+
+Explain how the ayschronus reset works.... (see notes in Lec2 slide 21)
