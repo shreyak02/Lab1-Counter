@@ -19,3 +19,11 @@ As a counter using vbdPlot():
 ![image](https://user-images.githubusercontent.com/21007664/199242081-cd0e980c-26d9-4485-b146-5328e0bf4f73.png)
 
 ![image](https://user-images.githubusercontent.com/21007664/199242023-9ebe5998-e38a-4f06-9aa7-1e4db0b9472c.png)
+
+### Challenge: 
+Modify your counter and testbench files so that the en signal controls the direction of counting: ‘1’ for up and ‘0’ for down, via the vbdFlag() function.
+
+![image](https://user-images.githubusercontent.com/21007664/199242980-922494e1-217c-420e-b20d-ccd5f28185d8.png)
+
+![image](https://user-images.githubusercontent.com/21007664/199243831-693cef9f-6f8c-4206-8305-3f6daa79d7cb.png)
+![image](https://user-images.githubusercontent.com/21007664/199243867-8bee2623-2343-49a3-bdba-8b5741801140.png)
