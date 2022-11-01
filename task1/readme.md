@@ -37,3 +37,13 @@
  ![image](https://user-images.githubusercontent.com/21007664/199223250-c168da38-922b-4063-b0a4-f4a5bd439a00.png)
 
 axis is in ps to represent the period for the clock cycle, it doesn't matter what scale is used.
+
+## Challenge 1:
+
+Modify the testbench so that you stop counting for 3 cycles once the counter reaches 0x9, and then resume counting. You may also need to change the stimulus for rst.
+
+![image](https://user-images.githubusercontent.com/21007664/199230062-e982a3c6-b382-4dd0-90e4-51e18e4ba227.png)
+
+
+Q) WHY DOES THE IF HAVE TO BE STORE + 1 AND +2 RATHER THAN (STORE AND THEN STORE +1)? BCOS IF WE DO THIS WE GET AN INFINITE LOOP.
+
