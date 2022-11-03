@@ -64,6 +64,7 @@ The current counter has a synchronous reset. To implement asynchronous reset, yo
 
 ![image](https://user-images.githubusercontent.com/21007664/199233306-bce1f7e5-66c2-42a4-86e7-59bd7ada16ee.png)
 
+* Synchronus means that reset happens only on the active edge of the clock signal.
 
 **After:**
 
@@ -71,6 +72,4 @@ The current counter has a synchronous reset. To implement asynchronous reset, yo
 
 ![image](https://user-images.githubusercontent.com/21007664/199233022-11376e12-1575-41d4-9bcb-465a0f5ad742.png)
 
-* Before, any changes made during a clock cycle could ONLY be implemented on the next positive edge clock cycle. Whereas after by setting an asynchronus reset, changes can happen during clock cycles.
-
-Explain how the ayschronus reset works.... (see notes in Lec2 slide 21)
+* An asynchronus reset can happen anytime whenever the reset signal is asserted and is independent of the clock. Posedge reset is sensitive to rising edge of reset.
