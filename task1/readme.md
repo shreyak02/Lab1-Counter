@@ -30,37 +30,47 @@
 
 ## Step 5: Compile the System Verilog model with the testbench
  
- ** Create a shell script to run the Verilator to translate counter.sv into C++ code, and merge with counter_tb.cpp to produce executable files. Vcounter.mk is the file that will be generated to produce the final simulation Vcounter. Vcounter.vcd is a file that can be run on GTKwave to produce a trace waveform file and contain the simulation results.
+* Create a shell script to run the Verilator to translate counter.sv into C++ code, and merge with counter_tb.cpp to produce executable files. Vcounter.mk is the file that will be generated to produce the final simulation Vcounter. Vcounter.vcd is a file that can be run on GTKwave to produce a trace waveform file and contain the simulation results.
  
  ## Step 6: Plot the counter waveforms with GTKwave:
  
  ![image](https://user-images.githubusercontent.com/21007664/199223250-c168da38-922b-4063-b0a4-f4a5bd439a00.png)
 
-axis is in ps to represent the period for the clock cycle, it doesn't matter what scale is used.
+* As seen in the testbench code, the reset signal is on when the clock is less than 2 cycles or equal to the positive edge of the 15th clock cycle.
+when reset is on the counter goes to 0 on the next clock cycle.
+* Enable remains on after the 4th clock cycle. The counter only counts when enable is high.
+* Axis is in ps to represent the period for the clock cycle, it doesn't matter what scale is used.
 
 ## Challenge 1:
 
 Modify the testbench so that you stop counting for 3 cycles once the counter reaches 0x9, and then resume counting. You may also need to change the stimulus for rst.
 
 ![image](https://user-images.githubusercontent.com/21007664/199230062-e982a3c6-b382-4dd0-90e4-51e18e4ba227.png)
+![image](https://user-images.githubusercontent.com/21007664/199670082-212fb51a-33b1-4a42-beb5-0e9e90fb49ae.png)
 
+* Due to the one cycle delay, begin by storing the value of the index i, when the counter reaches 8 (to work for any case rather than hardcoding the value i in). 
+* For the counter to stop when the count is 9, enable is set to 0 for the i+1 and i+2 clock cycles. Due to the one cycle delay the counter stays off for another cycle meaning we don't have to set enable to 0 for a third cycle.
+* Attempted to directly compare the value when count = 9 and set enable to 0, however due to the posedge clk changes can only happen each clock cycle.
 
-Q) WHY DOES THE IF HAVE TO BE STORE + 1 AND +2 RATHER THAN (STORE AND THEN STORE +1)? BCOS IF WE DO THIS WE GET AN INFINITE LOOP.
+Q) WHY DOES THE IF HAVE TO BE STORE + 1 AND +2 RATHER THAN (STORE AND THEN STORE +1 and set count to 9)? BCOS IF WE DO THIS WE GET AN INFINITE LOOP.
 
 ## Challenge 2:
 
 The current counter has a synchronous reset. To implement asynchronous reset, you can change line 11 of counter.sv to detect change in rst signal. 
-Before:
+
+**Before:**
 
 ![image](https://user-images.githubusercontent.com/21007664/199233358-196310f9-e846-4413-a3ae-530f118d2d0a.png)
 
 ![image](https://user-images.githubusercontent.com/21007664/199233306-bce1f7e5-66c2-42a4-86e7-59bd7ada16ee.png)
 
 
-After:
+**After:**
 
 ![image](https://user-images.githubusercontent.com/21007664/199233135-44b2946d-2381-4da1-9b32-75823a6f7eee.png)
 
 ![image](https://user-images.githubusercontent.com/21007664/199233022-11376e12-1575-41d4-9bcb-465a0f5ad742.png)
+
+* Before, any changes made during a clock cycle could ONLY be implemented on the next positive edge clock cycle. Whereas after by setting an asynchronus reset, changes can happen during clock cycles.
 
 Explain how the ayschronus reset works.... (see notes in Lec2 slide 21)
