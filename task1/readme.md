@@ -52,6 +52,13 @@ Modify the testbench so that you stop counting for 3 cycles once the counter rea
 * For the counter to stop when the count is 9, enable is set to 0 for the i+1 and i+2 clock cycles. Due to the one cycle delay the counter stays off for another cycle meaning we don't have to set enable to 0 for a third cycle.
 * Attempted to directly compare the value when count = 9 and set enable to 0, however due to the posedge clk changes can only happen each clock cycle.
 
+Could also implement method explained in the slides using top->count rather that setting a countdown:
+
+![image](https://user-images.githubusercontent.com/21007664/200133218-a23b1618-c2a8-431d-b83e-623394957718.png)
+![image](https://user-images.githubusercontent.com/21007664/200133227-6cea12d2-3274-4a46-84df-a8cdbe48ddf8.png)
+
+
+
 Q) WHY DOES THE IF HAVE TO BE STORE + 1 AND +2 RATHER THAN (STORE AND THEN STORE +1 and set count to 9)? BCOS IF WE DO THIS WE GET AN INFINITE LOOP.
 
 ## Challenge 2:
