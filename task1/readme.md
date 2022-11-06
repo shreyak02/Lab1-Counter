@@ -37,7 +37,7 @@
  ![image](https://user-images.githubusercontent.com/21007664/199223250-c168da38-922b-4063-b0a4-f4a5bd439a00.png)
 
 * As seen in the testbench code, the reset signal is on when the clock is less than 2 cycles or equal to the positive edge of the 15th clock cycle.
-when reset is on the counter goes to 0 on the next clock cycle.
+When reset is on the counter goes to 0 on the next clock cycle.
 * Enable remains on after the 4th clock cycle. The counter only counts when enable is high.
 * Axis is in ps to represent the period for the clock cycle, it doesn't matter what scale is used.
 
@@ -56,10 +56,6 @@ Could also implement method explained in the slides using top->count rather that
 
 ![image](https://user-images.githubusercontent.com/21007664/200133218-a23b1618-c2a8-431d-b83e-623394957718.png)
 ![image](https://user-images.githubusercontent.com/21007664/200133227-6cea12d2-3274-4a46-84df-a8cdbe48ddf8.png)
-
-
-
-Q) WHY DOES THE IF HAVE TO BE STORE + 1 AND +2 RATHER THAN (STORE AND THEN STORE +1 and set count to 9)? BCOS IF WE DO THIS WE GET AN INFINITE LOOP.
 
 ## Challenge 2:
 
